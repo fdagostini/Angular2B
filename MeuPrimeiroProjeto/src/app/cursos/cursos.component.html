@@ -1,5 +1,22 @@
 <p>
-  Componente criado pelo módulo!
+  Lista de cursos do portal {{ nomePortal }}  <!-- Isso se chama interpolação-->
 </p>
 
 <app-curso-detalhe> </app-curso-detalhe>
+
+<!-- Para fazer listagem manualmente, geralmente utilizamos a tage <ul>-->
+
+<!--<ul>
+  <li> Java </li>
+  <li> Angular </li>  
+</ul>-->
+
+<!-- Lista criada pelo template-->
+<ul>
+   <!-- Declaramos uma váriavel curso que vai receber a posição do array cursos -->
+  <li *ngFor="let curso of cursos">
+  <!-- Depois é feita a interpolação para a saída da variável curso -->
+   {{ cursos }}
+  </li>
+</ul>
+
