@@ -1,0 +1,23 @@
+<section class="property-binding">
+    <article>
+        <h3> Interpolation / Interpolação </h3>
+        <!-- O Angular consegue fazer interpolação de variável:-->
+        <p> String renderizada com Interpolação: {{ url }} </p>
+        <!-- Ele também consegue resolver expressões matemáticas: -->        
+        <p> Resultado de 1 + 1: {{ 1 + 1 }} </p>
+        <!-- Chamar metódos e: -->
+        <p> Resultado de 1 + 1 não é: {{ 1 + 1 + getValor() }} </p>
+        <!-- Resolver expressões boobleanas: -->
+        <p> Curso Angular e gostou do Curso {{ cursoAngular && getCurtirCurso () }} </p>
+    </article>
+    <article>
+      <h3> Interpolação com imagem e Property Binding </h3>
+      <!--Exemplo de interpolação com imagem: -->
+      <img src="{{urlImagem}}">
+      <!--Exemplo de interpolação com Property Binding: -->
+      <!-- Nessa situação, usa-se [] em volta do nome da propriedade; o Angular consegue identificar uma Property Binding,
+      não sendo necessário informar as {}. Fica a critério do programador utilizar a interpolação ou a Property Binding-->
+      <img [src]="urlImagem">
+      <p> </p>
+    </article>
+</section>
