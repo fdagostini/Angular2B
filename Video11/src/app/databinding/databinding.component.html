@@ -1,0 +1,36 @@
+<section class="event-binding">
+    <article>
+        <h3> Event Binding </h3>
+        <div>
+        <!-- O evento deve ser passado entre ();
+             Podemos também chamar um metódo, como é o caso de "BotaoClicado"
+        -->
+        <button (click)="BotaoClicado()" 
+            class="btn btn-primary"> Me clique</button>
+            <br><br>
+        <!--Escuntando um campo texto:
+            Para salvar ao presssionar enter, use p keyup.enter -->
+
+        <input type="text"
+        (ng-keyup)="onKeyUp($event)"
+        (ng-keypress)="salvarValor(campoInput.value)"
+        (ng-blur)="salvarValor(campoInput.value)"
+        #campoInput />            
+        <!--<input type="text" 
+        (keyup)="onKeyUp($event"     
+        (keyup.enter)="salvarValor(campoInput.value)"
+        (blur)="salvarValor(campoInput.value"
+        #campoInput />-->
+
+        <p> Valor atual: {{ valorAtual}} </p>   
+        <p> Valor salvo: {{ valorSalvo}} </p> 
+        <br>
+        <!--Outro exemplo:-->
+        <span
+        (mouseover)="onMouseOverOut()"
+        (mouseout)="onMouseOverOut"
+        [class.highligth]='isMouseOver'
+        > Passe o mouse sobre mim! </span>
+        </div>
+    </article>
+</section>
