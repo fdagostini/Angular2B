@@ -1,0 +1,41 @@
+<section class="property-binding">
+   <article>
+       <h3> Class and Style Binding </h3>
+       <div>
+           Selecione uma classe:
+           <!--- Primeiro é necessário criar uma variável local. Para isso use o #nomevariavel;
+                 Para ouvir a variável e saber quando houve uma mudança, use o "change";
+                 O "0" indica que nosso componente não executará nenhum método ao trocar de opção
+           -->
+           <select #classe (change) = "0"> 
+               <option value="alert-success">Sucesso</option>
+               <option value="alert-info">Informação</option>
+               <option value="alert-warning">Atenção</option>
+               <option value="alert-danger">Erro</option>               
+           </select>
+           <br><br>
+           <!-- Interpolação com Class Binding -->
+           <div class="alert {{classe.value }}" role="alert"> Texto a ser colorido conforme valor do combobox!</div>            
+           <!--Adicionando as <div> para cada opção que pode ser selecionada;
+               Para que seja apresentada apenas a div/cor correspondente a opção selecionada pelo usuário,
+               será utilizado o class binding, que é definido entre [];
+               Nesse class binding, estamos comparando se a opção selecionada no combobox, é o alert-success-->
+       <div class="alert" role="alert"
+        [class.alert-success]="classe.value == 'alert-success'">Sucesso</div>
+       <div class="alert" role="alert"
+        [class.alert-info]="classe.value == 'alert-info'">Informação</div>
+       <div class="alert" role="alert"
+        [class.alert-warning]="classe.value == 'alert-warning'">Atenção</div>
+       <div class="alert" role="alert"
+        [class.alert-danger]="classe.value == 'alert-danger'">Erro </div>
+
+        <!-- Exemplo de Style Binding
+            Aqui estamos comparando se a opção selecionada é do tipo "alert-danger";
+            se for, então executa o estilo "block"; senão executa o style "none"
+        -->
+        <div class="alert alert-danger" role="alert"
+       [style.display]="classe.value == 'alert-danger' ? 'block' : 'none'">
+       Esse texto só vai aparecer em caso de erro! </div>
+       </div>       
+   </article>
+</section>
