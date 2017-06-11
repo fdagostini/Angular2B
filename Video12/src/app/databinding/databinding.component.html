@@ -1,0 +1,33 @@
+<section>
+    <article class="two-way data binding">
+        <h3> Two way data binding </h3>
+        <div>
+            <!--Primeiro exemplo: 
+            [value] associação de propriedade
+            (input) associação de evento-->
+            <input type="text"             
+            [value]="nome"         
+            (input)="nome = $event.target.value"
+            />
+
+            <!--Segundo exemplo:
+                Quando utilizamos o ngModelChange, não é necessário usar o target.value-->
+            <input type="text"            
+            [ngModel]="nome"          
+            (ngModelChange)="nome = $event" 
+            />
+            
+            <!--Fazemos o two-way informando no evento, o binding de propriedade [] + o binding de evento ()-->
+            <input type="text" [(ngModel)]="nome">     
+            <p>Você digitou : {{nome}} </p>
+        </div>
+          <!--Exemplo de two-way com objeto-->
+        <div>
+            <p>Meu nome é {{pessoa.nome}} e tenho {{pessoa.idade}} anos de idade!</p>
+
+            <input type="text" [(ngModel)]="pessoa.nome">
+            <input type="text" [(ngModel)]="pessoa.idade">            
+        </div>
+
+    </article>
+</section>
