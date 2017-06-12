@@ -1,0 +1,7 @@
+- executar esse comando em casa: git pull origin master
+
+1) Commit (quantos quiser)
+2) Pull (baixa novos arquivos do repositorio do servidor) 
+3) Push (envia novos arquivos do repositorio local para o servidor) (o fetch é somente um atualizador de status para saber quandos novos arquivos tem no servidor que não temos no repositório local). A ideia é, antes de enviar os arquivos locais para o servidor (push) devemos baixar os novos arquivos do servidor (pull), caso tenha. 
+Se tentar fazer um push mas la no servidor tem novos arquivos por mais que não sejam os arquivos q vc esta alterado o git retorna erro, somos obrigados a fazer um pull e depois fazer um push.
+
