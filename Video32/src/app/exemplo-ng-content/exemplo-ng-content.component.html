@@ -1,0 +1,19 @@
+
+<!-- Exemplo com apenas um conteúdo-->
+<div class="panel panel-default">
+  <div class="panel-heading">Título</div>
+  <div class="panel-body">
+    <ng-content> </ng-content> <!-- Utiliza-se a tag ng-content-->
+  </div>
+</div>
+
+<!-- Exemplo com vários conteúdos
+     Nesse caso, temos que criar seletores e passar eles no nosso app.component.html-->
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <ng-content select=".titulo"> </ng-content>
+  </div>
+  <div class="panel-body">
+    <ng-content select=".corpo"> </ng-content>
+  </div>
+</div>
