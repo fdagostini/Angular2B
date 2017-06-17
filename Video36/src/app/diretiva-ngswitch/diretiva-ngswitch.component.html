@@ -1,0 +1,15 @@
+<nav class="navbar navbar-toggleable-md navbar-inverse bg-primary"> 
+  <div class="nav navbar-nav">
+    <a class="nav-link" [class.ative]="aba == 'home'" (click)="aba = 'home'" >Home</a>
+    <a class="nav-link" [class.ative]="aba == 'mapa'" (click)="aba = 'mapa'" >Mapa</a>
+    <a class="nav-link" [class.ative]="aba == 'lista'"(click)="aba = 'lista'">Lista</a>
+  </div>
+</nav>
+<!--Para utilizar a diretiva ngSwitchCase, use: *ngSwitchCase="Expressão"-->
+<div class="container" [ngSwitch]="aba">
+  <p *ngSwitchCase="'mapa'"> Modo mapa ativado </p>
+  <p *ngSwitchCase="'lista'"> Modo lista ativado </p>
+  <!--Podemos também aplicar um valor padrão-->
+  <p *ngSwitchDefault> Modo Home - Default </p>
+  
+   </div>
