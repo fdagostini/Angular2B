@@ -1,0 +1,15 @@
+<p> Descrição da tarefa: {{tarefa.desc}} </p>
+
+<!-- Em alguns momentos, podemos tentar ler um objeto e ele retornar como null: -->
+<!--<p> Responsável: {{tarefa.responsavel.nome}} </p>-->
+
+<!-- Para resolver isso: -->
+<p> Responsável: {{tarefa.responsavel != null ? tarefa.responsavel.nome : ''}} </p>
+
+<!-- Como o código fica muito extenso escrevendo dessa forma, usamos o operador Elvis: 
+     Quando informamos esse operador depois de uma variável ou objeto, indicamos que ele pode
+     retornar como null; ele terá a mesma funcionalidade da expressão anterior, porém escrito de
+     forma mais prática-->
+
+<p> Responsável: {{tarefa.responsavel?.nome}} </p>
+
