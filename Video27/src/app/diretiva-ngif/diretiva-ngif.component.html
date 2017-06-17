@@ -1,0 +1,27 @@
+
+<h5>*ngIf</h5>
+
+<!--Para utilizar a diretiva ngIf, use: *ngIf="Expressão"-->
+<div *ngIf="curso.length > 0"> Lista de cursos aqui. 
+</div>
+
+<!-- A diretiva ngIf não possui else, então caso precise fazer um else
+é necessário criar outra diretiva ngIf-->
+<div *ngIf="curso.length == 0"> Não existem cursos para serem listados. 
+</div>
+
+<!-- Exemplo de ngIf com variável booleana-->
+
+<div *ngIf="mostrarCursos"> Lista de cursos aqui
+</div>
+
+<div *ngIf="!mostrarCursos"> Não existem cursos para serem listados. 
+</div>
+
+<br>
+<button (click)="onMostrarCursos">Mostrar ou esconder cursos</button>
+
+<h5> </h5>
+
+<div [hidden]="!mostrarCursos"> Lista de cursos aqui </div>
+<div [hidden]="mostrarCursos"> Não existem cursos para serem listados.</div>
