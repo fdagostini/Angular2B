@@ -1,0 +1,22 @@
+<h5> Exemplo de Pipes </h5>
+
+<!-- | uppercase: deixa todas as letras em maiúsculo
+     | lowercase: deixa tudo em letras minuscúlas
+     | currency: deixa o preço em moeda americana; se você quiser passar a moeda brasileira,
+       basta passar o código "BRL"; caso queira mostrar o cifrão ao invés do código da moeda, use mais o
+       parâmetro 'true'
+     | É possível formatar a data; use a documentação para verificar todos os formatos.
+     Também é possível passar parâmetros para o pipe; informe o tipo do pipe:'parâmetro'
+-->
+<p>Título:{{ livro.titulo | uppercase }} </p>
+<p>Estrelas: {{ livro.rating | number:'1.1-2' }}</p> <!--passando o número de casas inteiras (1) e 
+                                                         o número mínimo de casas decimais (1) e o
+                                                         número máximo de casas decimais (2)-->
+<p>Páginas: {{ livro.numeroPaginas | number }}</p>
+<p>Preço: {{ livro.preco | currency: 'BRL':'true'}}</p> <!--Se você quer passar mais de um parâmetro
+                                                            utilize novamente os ":"-->
+<p>Data Lançamento: {{ livro.dataLancamento | date:'dd-MM-yyyy' }}</p> <!--Se quiser apresentar o
+                                                                            mês por extenso, use "MMM"-->
+<p>URL: {{ livro.url }}</p>
+<br>
+<p> Livro: {{ livro |json }}</p>
