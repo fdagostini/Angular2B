@@ -1,0 +1,15 @@
+<!-- O ngSubmit indica o objeto -->
+<form #f="ngFor" (ngSubmit)="onSubmit(f)" >
+<div class="form-group">
+  <label for="nome">Nome</label>
+  <input type="texto" class="form-control" name="name" id="nome" placeholder="nome" ngModel>  
+</div>
+
+<div class="form-group">
+  <label for="email">Email</label>
+  <input type="email" class="form-control" name="email" id="email" placeholder="nome@email.com" ngModel>  
+</div>
+
+ <button type="submit" class="btn btn-primary">Submit</button>
+
+</form>
