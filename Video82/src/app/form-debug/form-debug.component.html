@@ -1,0 +1,14 @@
+<div style="margin-top: 20px" *ng-if="form">
+  <div>
+    Detalhes do formulário
+  </div>
+  <pre>
+    Form válido: {{ form.valid }} <!-- Indica se o formulário está válido -->
+  </pre>
+  <pre>
+    Form submetido: {{ form.submitted }} <!-- Indica se o formulário foi submetido -->
+  </pre>
+  <pre>
+    Valores: <br> {{ form.value | json }} <!-- Apresenta os valore digitados -->
+  </pre>
+</div>
