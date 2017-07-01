@@ -1,0 +1,26 @@
+<form #f="ngForm" (ngSubmit)="onSubmit(f)" >
+<div class="form-group"
+[class.has-error]="!nome.valid && nome.touched">
+  <!-- Primeira forma de fazer a validação; nesse caso não precisa do .css:
+       [class.has-erros]="!nome.valid && nome.touched">-->
+  <label for="nome">Nome</label>
+  <input type="texto" class="form-control" name="name" id="nome"
+     placeholder="nome" [ngModel="usuario.email" required #nome="ngModel">  
+     <!-- Segunda forma de fazer a validação; nesse caso tem que ser o .css -->
+     <div *ng-if="!nome.valid && nome.touched" class="alert alert-danger" role="alert">
+       Nome é obrigatório.
+     </div>     
+</div>
+
+<div class="form-group">
+  <label for="email">Email</label>
+  <input type="email" class="form-control" name="email" id="email" 
+     placeholder="nome@email.com" [(ngModel="usuario.nome") required email #email="ngModel">  
+    <div *ng-if="!email.valid && email.touched" class="alert alert-danger" role="alert">
+       Email é obrigatório.
+     </div>
+</div>
+
+ <button type="submit" class="btn btn-primary">Submit</button>
+
+</form>
