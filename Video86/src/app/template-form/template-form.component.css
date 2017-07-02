@@ -1,0 +1,8 @@
+/* Se o campo está invádli (ng-invalid) ou 
+   recebeu o foco (ng-touched) e continua inválido, 
+   ele será contornado na cor vermelha*/
+
+.ng-invalid.ng-touched:not(form){
+    border: 1px solid red;
+
+}
